@@ -834,13 +834,14 @@ document.getElementById('modalSave').addEventListener('click', ()=>{
     return;
   }
   s.data.push(record);
+  const savedKey = modalKey;
   closeModal();
-  if(currentSection===modalKey){
-    contentEl.innerHTML = renderModulePanel(modalKey);
-    attachPanelEvents(modalKey);
+  if(currentSection===savedKey){
+    contentEl.innerHTML = renderModulePanel(savedKey);
+    attachPanelEvents(savedKey);
   }
   showToast("បានរក្សាទុកទិន្នន័យដោយជោគជ័យ");
-  saveSheet(modalKey);
+  saveSheet(savedKey);
 });
 
 /* =========================================================
